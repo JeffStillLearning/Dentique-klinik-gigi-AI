@@ -27,27 +27,27 @@ const steps = [
 
 export function FlowSection() {
   return (
-    <section className="flow-section" aria-labelledby="flow-heading">
-      <div className="wrap">
-        <div className="sec-head">
+    <section className="bg-ink text-paper py-[clamp(60px,9vw,120px)] px-[var(--pad)]" aria-labelledby="flow-heading">
+      <div className="max-w-[var(--maxw)] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(20px,4vw,60px)] items-end mb-16">
           <div>
-            <div className="eyebrow">Cara Booking · 4 Langkah</div>
-            <h2 className="display" id="flow-heading">
+            <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-paper/60 flex items-center gap-[10px] before:content-[''] before:w-[18px] before:h-[1px] before:bg-gold">Cara Booking · 4 Langkah</div>
+            <h2 className="font-display font-normal text-[clamp(36px,5vw,64px)] leading-[1.04] tracking-[-0.018em] mt-[18px] text-balance text-paper [&>em]:italic [&>em]:text-gold" id="flow-heading">
               Tanpa antrian.<br />Tanpa <em>kejutan biaya</em>.
             </h2>
           </div>
-          <div className="right">
+          <div className="text-paper/65 text-[16px] max-w-[480px]">
             Kami percaya pengalaman ke dokter gigi semestinya tenang sejak menit pertama Anda menghubungi kami. Begini alurnya.
           </div>
         </div>
 
-        <div className="flow">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-paper/20">
           {steps.map((step) => (
-            <div className="step" key={step.n}>
-              <div className="n">{step.n}</div>
-              <h4>{step.title}</h4>
-              <p>{step.desc}</p>
-              <div className="dur">{step.dur}</div>
+            <div className="p-[36px_28px_32px] border-r border-paper/15 relative lg:last:border-r-0 max-sm:border-r-0 sm:max-lg:odd:border-r sm:max-lg:even:border-r-0 max-sm:border-b sm:max-lg:[&:nth-child(1)]:border-b sm:max-lg:[&:nth-child(2)]:border-b" key={step.n}>
+              <div className="font-display italic text-[54px] leading-none text-gold mb-[36px]">{step.n}</div>
+              <h4 className="font-display font-normal text-[24px] mb-[10px] tracking-[-0.01em]">{step.title}</h4>
+              <p className="text-[14px] text-paper/65 leading-[1.55]">{step.desc}</p>
+              <div className="mt-[20px] font-mono text-[10.5px] tracking-[0.16em] uppercase text-paper/50">{step.dur}</div>
             </div>
           ))}
         </div>

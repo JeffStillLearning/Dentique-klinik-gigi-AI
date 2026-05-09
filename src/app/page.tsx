@@ -23,16 +23,14 @@ export default function Home() {
         Langsung ke konten utama
       </a>
 
-      <AnnouncementBar />
+      {/* <AnnouncementBar /> */}
 
       <header role="banner" aria-label="Header utama Dentique Clinic">
         <NavBar />
       </header>
 
       <main id="main-content" tabIndex={-1}>
-        <section aria-labelledby="hero-heading">
-          <HeroSection />
-        </section>
+        <HeroSection />
 
         <div role="complementary" aria-label="Kredensial dan akreditasi">
           <TrustBar />

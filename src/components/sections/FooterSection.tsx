@@ -34,15 +34,15 @@ const footerCols = [
 
 export function FooterSection() {
   return (
-    <footer role="contentinfo">
-      <div className="foot-grid">
-        <div className="foot-brand">
-          <div className="mark">Dent<em>i</em>que</div>
-          <p>Klinik gigi modern yang menempatkan ketenangan pasien setara dengan presisi klinis. Berdiri di Senopati, Jakarta sejak {site.founded}.</p>
+    <footer role="contentinfo" className="bg-ink text-paper p-[80px_var(--pad)_40px]">
+      <div className="max-w-[var(--maxw)] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-[40px] border-b border-paper/15 pb-[48px]">
+        <div>
+          <div className="font-display text-[42px] tracking-[-0.02em]">Dent<em className="italic text-gold">i</em>que</div>
+          <p className="mt-3.5 text-paper/65 max-w-[340px] text-[14.5px]">Klinik gigi modern yang menempatkan ketenangan pasien setara dengan presisi klinis. Berdiri di Senopati, Jakarta sejak {site.founded}.</p>
         </div>
         {footerCols.map((col) => (
-          <div key={col.heading} className="foot-col">
-            <h6>{col.heading}</h6>
+          <div key={col.heading}>
+            <h6 className="font-mono text-[11px] tracking-[0.18em] uppercase text-paper/50 mb-[18px]">{col.heading}</h6>
             <nav aria-label={col.heading}>
               {col.links.map((link) => (
                 <a
@@ -50,6 +50,7 @@ export function FooterSection() {
                   href={link.href}
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
+                  className="block py-[6px] text-paper/85 text-[14.5px] hover:text-gold transition-colors"
                 >
                   {link.label}
                 </a>
@@ -58,7 +59,7 @@ export function FooterSection() {
           </div>
         ))}
       </div>
-      <div className="foot-bot">
+      <div className="max-w-[var(--maxw)] mx-auto pt-[24px] flex justify-between gap-[20px] flex-wrap font-mono text-[11px] tracking-[0.14em] uppercase text-paper/50">
         <span>© 2014—2026 Dentique Clinic. Izin Klinik No. {site.licenseNo}.</span>
         <span>Privasi · Syarat Layanan</span>
       </div>
