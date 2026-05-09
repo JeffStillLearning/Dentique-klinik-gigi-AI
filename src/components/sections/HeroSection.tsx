@@ -4,7 +4,7 @@ import { site } from '@/data/site'
 export function HeroSection() {
   return (
     <section aria-labelledby="hero-heading" className="pt-0 pb-[clamp(60px,9vw,100px)] px-[var(--pad)]">
-      <div className="max-w-[var(--maxw)] mx-auto mt-4 md:mt-6">
+      <div className="max-w-[var(--maxw)] mx-auto mt-10 md:mt-6">
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-[clamp(32px,5vw,80px)] items-center">
 
           {/* Left — copy */}
@@ -18,9 +18,9 @@ export function HeroSection() {
             <p className="mt-7 max-w-[520px] text-ink-soft text-lg leading-[1.55]">
               Perawatan gigi estetik dan restoratif untuk dewasa dan anak — dijalankan oleh tim dokter bersertifikasi dengan teknologi diagnostik 3D, dalam ruang yang dirancang setenang sebuah ruang baca.
             </p>
-            <div className="flex gap-3.5 mt-9 flex-wrap">
+            <div className="hidden sm:flex gap-3.5 mt-9 flex-wrap">
               <a href="#booking" className="btn btn-primary">
-                Buat Janji Sekarang <span className="arr">→</span>
+                Buat Reservasi <span className="arr">→</span>
               </a>
               <a
                 href={`https://wa.me/${site.whatsapp}`}
@@ -44,13 +44,13 @@ export function HeroSection() {
                 className="object-cover"
                 sizes="(max-width: 900px) 100vw, 45vw"
               />
-              <div className="absolute top-6 left-6 bg-paper px-[18px] py-[14px] border border-line font-mono text-[11px] tracking-[0.14em] uppercase text-ink z-10">
+              <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-paper px-3 py-2 sm:px-[18px] sm:py-[14px] border border-line font-mono text-[9px] sm:text-[11px] tracking-[0.14em] uppercase text-ink z-10">
                 Rating Google
-                <strong className="block font-display not-italic text-[32px] tracking-[-0.02em] text-ink mt-1">4.9 / 5.0</strong>
+                <strong className="block font-display not-italic text-xl sm:text-[32px] tracking-[-0.02em] text-ink mt-0.5 sm:mt-1">4.9 / 5.0</strong>
               </div>
-              <div className="absolute bottom-6 right-6 left-6 bg-ink/92 text-paper py-[18px] px-5 font-display italic text-lg leading-snug z-10">
+              <div className="absolute bottom-3 right-3 left-3 sm:bottom-6 sm:right-6 sm:left-6 bg-ink/92 text-paper py-3 px-4 sm:py-[18px] sm:px-5 font-display italic text-base sm:text-lg leading-snug z-10">
                 &ldquo;Tenang, bersih, tidak terasa seperti klinik gigi pada umumnya.&rdquo;
-                <small className="block mt-2.5 not-italic font-mono text-[10.5px] tracking-[0.16em] uppercase opacity-70">— A. Putri · Pasien sejak 2019</small>
+                <small className="block mt-1.5 sm:mt-2.5 not-italic font-mono text-[9px] sm:text-[10.5px] tracking-[0.16em] uppercase opacity-70">— A. Putri · Pasien sejak 2019</small>
               </div>
             </div>
           </div>

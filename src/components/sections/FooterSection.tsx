@@ -36,7 +36,7 @@ export function FooterSection() {
   return (
     <footer role="contentinfo" className="bg-ink text-paper p-[80px_var(--pad)_40px]">
       <div className="max-w-[var(--maxw)] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-[40px] border-b border-paper/15 pb-[48px]">
-        <div>
+        <div className="sm:col-span-2 lg:col-span-1">
           <div className="font-display text-[42px] tracking-[-0.02em]">Dent<em className="italic text-gold">i</em>que</div>
           <p className="mt-3.5 text-paper/65 max-w-[340px] text-[14.5px]">Klinik gigi modern yang menempatkan ketenangan pasien setara dengan presisi klinis. Berdiri di Senopati, Jakarta sejak {site.founded}.</p>
         </div>

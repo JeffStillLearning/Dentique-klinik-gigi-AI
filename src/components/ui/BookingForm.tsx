@@ -163,12 +163,12 @@ export function BookingForm() {
       <button
         type="submit"
         disabled={isPending}
-        className={`btn mt-[6px] self-start${sent ? ' btn-clay' : ' btn-primary'}`}
+        className={`w-full sm:w-auto btn ${sent ? 'btn-clay' : 'btn-primary'} mt-1.5 justify-center sm:justify-center`}
         style={{ opacity: isPending ? 0.7 : 1 }}
       >
         {sent
-          ? 'Terkirim — kami akan menghubungi Anda'
-          : <><span>Kirim Permintaan Janji</span> <span className="arr">→</span></>
+          ? 'Pesan Terkirim ✓'
+          : <><span>Kirim Reservasi</span> <span className="arr">→</span></>
         }
       </button>
 

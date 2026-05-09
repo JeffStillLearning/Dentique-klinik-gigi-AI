@@ -1,5 +1,6 @@
 import { doctors } from '@/data/doctors'
 import { DoctorCard } from '@/components/ui/DoctorCard'
+import { Button } from '@/components/ui/Button'
 
 export function DoctorsSection() {
   return (
@@ -23,10 +24,10 @@ export function DoctorsSection() {
           ))}
         </div>
 
-        <div className="mt-6 flex justify-center">
-          <a href="#" className="inline-flex items-center gap-[10px] px-[22px] py-[14px] text-[14px] tracking-[0.02em] rounded-full border border-ink text-ink transition-all duration-200 hover:bg-ink hover:text-paper group">
-            Lihat seluruh tim (9 dokter) <span className="transition-transform duration-200 group-hover:translate-x-[3px]">→</span>
-          </a>
+        <div className="mt-10 flex justify-center">
+          <Button href="#" variant="ghost" arrow>
+            Lihat seluruh tim (9 dokter)
+          </Button>
         </div>
       </div>
     </section>

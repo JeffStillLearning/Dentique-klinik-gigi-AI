@@ -43,7 +43,12 @@ export function FlowSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-paper/20">
           {steps.map((step) => (
-            <div className="p-[36px_28px_32px] border-r border-paper/15 relative lg:last:border-r-0 max-sm:border-r-0 sm:max-lg:odd:border-r sm:max-lg:even:border-r-0 max-sm:border-b sm:max-lg:[&:nth-child(1)]:border-b sm:max-lg:[&:nth-child(2)]:border-b" key={step.n}>
+            <div 
+              className="p-[36px_28px_32px] border-r border-paper/15 relative last:border-r-0 
+                         max-sm:border-r-0 max-sm:border-b 
+                         sm:max-lg:[&:nth-child(2)]:border-r-0 sm:max-lg:[&:nth-child(1)]:border-b sm:max-lg:[&:nth-child(2)]:border-b" 
+              key={step.n}
+            >
               <div className="font-display italic text-[54px] leading-none text-gold mb-[36px]">{step.n}</div>
               <h4 className="font-display font-normal text-[24px] mb-[10px] tracking-[-0.01em]">{step.title}</h4>
               <p className="text-[14px] text-paper/65 leading-[1.55]">{step.desc}</p>
