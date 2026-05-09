@@ -1,0 +1,33 @@
+export const site = {
+  name: 'Dentique Clinic',
+  tagline: 'Senyum yang Anda percaya, seumur hidup.',
+  url: 'https://dentique.co.id',
+  phone: '+62 21 7234 9090',
+  phoneHref: '+622172349090',
+  whatsapp: '6281234567890',
+  email: 'halo@dentique.co.id',
+  address: {
+    street: 'Jl. Suryo No. 24',
+    area: 'Senopati, Kebayoran Baru',
+    city: 'Jakarta Selatan',
+    postal: '12180',
+    full: 'Jl. Suryo No. 24, Senopati, Kebayoran Baru, Jakarta Selatan 12180',
+  },
+  coords: { lat: -6.23, lng: 106.8068 },
+  founded: '2014',
+  licenseNo: '503/4521/DPMPTSP',
+  stats: {
+    years: '12+',
+    patients: '8.400+',
+    doctors: '9',
+    rating: '4.9',
+    ratingTotal: '5',
+    reviews: '612',
+  },
+  hours: [
+    { day: 'Senin — Jumat', time: '09.00 — 21.00', closed: false },
+    { day: 'Sabtu', time: '09.00 — 18.00', closed: false },
+    { day: 'Minggu', time: 'Tutup · darurat tersedia', closed: true },
+    { day: 'Hari Libur Nasional', time: 'Tutup', closed: true },
+  ],
+}

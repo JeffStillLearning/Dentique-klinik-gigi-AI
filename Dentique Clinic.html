@@ -1,0 +1,1414 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dentique Clinic — Klinik Gigi Modern di Jakarta</title>
+<meta name="description" content="Klinik gigi premium di Jakarta. Perawatan estetik & restoratif oleh dokter bersertifikat. Booking konsultasi gratis." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F5F1EA;
+  --cream-2:#EFE9DD;
+  --paper:#FBF8F2;
+  --ink:#1B3A3A;
+  --ink-2:#2A4D4D;
+  --ink-soft:#5C7373;
+  --line:#D9D2C2;
+  --line-soft:#E6DFCD;
+  --clay:#B8714A;
+  --clay-deep:#9A5A38;
+  --gold:#B89968;
+  --display:"Instrument Serif", "Times New Roman", serif;
+  --sans:"Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
+  --maxw:1280px;
+  --pad: clamp(20px, 4vw, 56px);
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; cursor:pointer; border:none; background:none; }
+
+/* ---------- announcement ---------- */
+.announce{
+  background:var(--ink);
+  color:var(--paper);
+  font-size:12.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  padding:9px var(--pad);
+  display:flex; justify-content:center; gap:24px;
+  font-family:var(--mono);
+}
+.announce .dot{ width:5px; height:5px; border-radius:50%; background:var(--clay); display:inline-block; align-self:center; }
+.announce span:nth-child(3){ opacity:0.55; }
+@media (max-width:720px){ .announce span:nth-child(3){ display:none; } }
+
+/* ---------- nav ---------- */
+nav.top{
+  position:sticky; top:0; z-index:30;
+  background:var(--cream);
+  border-bottom:1px solid var(--line-soft);
+  padding: 18px var(--pad);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{ display:flex; align-items:baseline; gap:10px; }
+.brand .mark{
+  font-family:var(--display);
+  font-size:28px;
+  letter-spacing:-0.02em;
+  line-height:1;
+}
+.brand .mark em{ font-style:italic; color:var(--clay); }
+.brand .tag{
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  border-left:1px solid var(--line);
+  padding-left:10px;
+}
+@media(max-width:720px){ .brand .tag{ display:none; } }
+
+.nav-links{ display:flex; gap:30px; font-size:14px; color:var(--ink-2); }
+.nav-links a:hover{ color:var(--clay); }
+@media(max-width:900px){ .nav-links{ display:none; } }
+
+.nav-cta{ display:flex; align-items:center; gap:14px; }
+.nav-phone{ font-family:var(--mono); font-size:13px; color:var(--ink-soft); }
+@media(max-width:720px){ .nav-phone{ display:none; } }
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 22px;
+  font-size:14px; letter-spacing:0.02em;
+  border-radius:999px;
+  transition:transform .2s ease, background .2s ease, color .2s ease;
+}
+.btn-primary{ background:var(--ink); color:var(--paper); }
+.btn-primary:hover{ background:var(--clay-deep); }
+.btn-ghost{ border:1px solid var(--ink); color:var(--ink); }
+.btn-ghost:hover{ background:var(--ink); color:var(--paper); }
+.btn-clay{ background:var(--clay); color:var(--paper); }
+.btn-clay:hover{ background:var(--clay-deep); }
+.btn .arr{ transition:transform .2s ease; }
+.btn:hover .arr{ transform:translateX(3px); }
+
+.btn-sm{ padding:10px 16px; font-size:13px; }
+
+/* ---------- shared ---------- */
+section{ padding: clamp(60px, 9vw, 120px) var(--pad); }
+.wrap{ max-width:var(--maxw); margin:0 auto; }
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{
+  content:""; width:18px; height:1px; background:var(--clay);
+}
+h2.display{
+  font-family:var(--display);
+  font-weight:400;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height:1.04;
+  letter-spacing:-0.018em;
+  margin: 18px 0 0;
+  text-wrap:balance;
+}
+h2.display em{ font-style:italic; color:var(--clay); }
+.lede{
+  margin-top:18px;
+  max-width:560px;
+  color:var(--ink-soft);
+  font-size:17px;
+  line-height:1.6;
+  text-wrap:pretty;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding-top: clamp(40px, 6vw, 80px);
+  padding-bottom: clamp(60px, 9vw, 100px);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items:end;
+}
+@media(max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+
+.hero h1{
+  font-family:var(--display);
+  font-weight:400;
+  font-size: clamp(48px, 7.4vw, 104px);
+  line-height:0.98;
+  letter-spacing:-0.025em;
+  margin: 28px 0 0;
+}
+.hero h1 em{ font-style:italic; color:var(--clay); }
+.hero .sub{
+  margin-top:28px;
+  max-width:520px;
+  color:var(--ink-soft);
+  font-size:18px;
+  line-height:1.55;
+}
+.hero .ctas{ display:flex; gap:14px; margin-top:36px; flex-wrap:wrap; }
+
+.hero-figure{
+  position:relative;
+  aspect-ratio: 4/5;
+  background:var(--cream-2);
+  border-radius:4px;
+  overflow:hidden;
+  background-image:
+    repeating-linear-gradient( -8deg,
+      transparent 0 18px,
+      rgba(27,58,58,0.04) 18px 19px);
+  display:flex; align-items:center; justify-content:center;
+}
+.hero-figure .ph-label{
+  font-family:var(--mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--ink-soft);
+  background:var(--paper); padding:10px 16px; border:1px solid var(--line);
+}
+.hero-figure .badge{
+  position:absolute; top:24px; left:24px;
+  background:var(--paper);
+  padding:14px 18px;
+  border:1px solid var(--line);
+  font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--ink);
+}
+.hero-figure .badge strong{
+  display:block; font-family:var(--display); font-style:normal;
+  font-size:32px; letter-spacing:-0.02em; color:var(--ink);
+  margin-top:4px;
+}
+.hero-figure .quote{
+  position:absolute; bottom:24px; right:24px; left:24px;
+  background:rgba(27,58,58,0.92); color:var(--paper);
+  padding:18px 20px;
+  font-family:var(--display); font-style:italic; font-size:18px; line-height:1.4;
+}
+.hero-figure .quote small{
+  display:block; margin-top:10px; font-style:normal; font-family:var(--mono);
+  font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.7;
+}
+
+.hero-meta{
+  margin-top:48px;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+  border-top:1px solid var(--line);
+  padding-top:32px;
+}
+@media(max-width:720px){ .hero-meta{ grid-template-columns:repeat(2,1fr); } }
+.hero-meta .stat{ }
+.hero-meta .num{
+  font-family:var(--display); font-size:42px; line-height:1; letter-spacing:-0.02em;
+}
+.hero-meta .num em{ font-style:italic; color:var(--clay); }
+.hero-meta .lab{
+  margin-top:8px;
+  font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+/* ---------- TRUST BAR ---------- */
+.trust{
+  background:var(--paper);
+  border-block:1px solid var(--line-soft);
+  padding: 28px var(--pad);
+}
+.trust-row{
+  max-width:var(--maxw); margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;
+}
+.trust-item{
+  display:flex; align-items:center; gap:14px;
+  font-family:var(--mono); font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.trust-item .ic{
+  width:28px; height:28px; border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--display); font-style:italic; color:var(--clay); font-size:18px;
+  background:var(--cream);
+}
+.trust-item b{ color:var(--ink); font-weight:500; }
+
+/* ---------- SECTION HEAD ---------- */
+.sec-head{
+  display:grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,4vw,60px);
+  align-items:end;
+  margin-bottom:64px;
+}
+@media(max-width:800px){ .sec-head{ grid-template-columns:1fr; } }
+.sec-head .right{ color:var(--ink-soft); font-size:16px; max-width:480px; }
+.sec-num{
+  font-family:var(--mono); font-size:11px; letter-spacing:0.18em;
+  color:var(--clay); text-transform:uppercase;
+}
+
+/* ---------- SERVICES ---------- */
+.services{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+@media(max-width:900px){ .services{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:600px){ .services{ grid-template-columns:1fr; } }
+
+.svc{
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding: 36px 32px 32px;
+  position:relative;
+  background:var(--cream);
+  transition:background .25s ease;
+}
+.svc:hover{ background:var(--paper); }
+.svc .hd{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  margin-bottom:64px;
+}
+.svc .ix{ font-family:var(--mono); font-size:11px; letter-spacing:0.16em; color:var(--ink-soft); }
+.svc .pop{
+  font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--clay); border:1px solid var(--clay); padding:4px 8px; border-radius:999px;
+}
+.svc h3{
+  font-family:var(--display); font-weight:400; font-size:30px; line-height:1.1;
+  letter-spacing:-0.015em; margin:0 0 10px;
+}
+.svc h3 em{ font-style:italic; color:var(--clay); }
+.svc p{ font-size:14.5px; color:var(--ink-soft); margin:0 0 28px; line-height:1.55; }
+.svc .pricing{
+  display:flex; justify-content:space-between; align-items:flex-end;
+  border-top:1px solid var(--line-soft); padding-top:18px;
+}
+.svc .price-lab{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); }
+.svc .price{ font-family:var(--display); font-size:24px; letter-spacing:-0.01em; }
+.svc .arrow{
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--ink); display:flex; align-items:center; justify-content:center;
+  transition:background .2s ease, color .2s ease;
+}
+.svc:hover .arrow{ background:var(--ink); color:var(--paper); }
+
+/* ---------- FLOW ---------- */
+.flow-section{ background:var(--ink); color:var(--paper); }
+.flow-section .eyebrow{ color:rgba(245,241,234,0.6); }
+.flow-section .eyebrow::before{ background:var(--gold); }
+.flow-section h2.display{ color:var(--paper); }
+.flow-section h2.display em{ color:var(--gold); }
+.flow-section .right{ color:rgba(245,241,234,0.65); }
+
+.flow{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+  border-top:1px solid rgba(245,241,234,0.2);
+}
+@media(max-width:900px){ .flow{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:520px){ .flow{ grid-template-columns:1fr; } }
+.step{
+  padding:36px 28px 32px;
+  border-right:1px solid rgba(245,241,234,0.15);
+  position:relative;
+}
+.step:last-child{ border-right:none; }
+@media(max-width:900px){
+  .step:nth-child(2){ border-right:none; }
+  .step:nth-child(1),.step:nth-child(2){ border-bottom:1px solid rgba(245,241,234,0.15); }
+}
+.step .n{
+  font-family:var(--display); font-style:italic; font-size:54px; line-height:1;
+  color:var(--gold); margin-bottom:36px;
+}
+.step h4{ font-family:var(--display); font-weight:400; font-size:24px; margin:0 0 10px; letter-spacing:-0.01em; }
+.step p{ font-size:14px; color:rgba(245,241,234,0.65); margin:0; line-height:1.55; }
+.step .dur{
+  margin-top:20px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase;
+  color:rgba(245,241,234,0.5);
+}
+
+/* ---------- DOCTORS ---------- */
+.doctors{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+}
+@media(max-width:900px){ .doctors{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:600px){ .doctors{ grid-template-columns:1fr; } }
+
+.doc{
+  background:var(--paper);
+  border:1px solid var(--line-soft);
+}
+.doc .ph{
+  aspect-ratio: 4/5;
+  background-image:
+    repeating-linear-gradient( -10deg,
+      transparent 0 14px,
+      rgba(27,58,58,0.05) 14px 15px),
+    linear-gradient(180deg, var(--cream-2), var(--cream));
+  display:flex; align-items:flex-end; justify-content:space-between;
+  padding:18px;
+}
+.doc .ph .ph-tag{
+  font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--ink-soft); background:var(--paper); padding:6px 10px; border:1px solid var(--line);
+}
+.doc .ph .ph-id{
+  font-family:var(--mono); font-size:10px; color:var(--ink-soft);
+  letter-spacing:0.1em;
+}
+.doc-body{ padding:24px 24px 26px; }
+.doc h4{
+  font-family:var(--display); font-weight:400; font-size:26px; letter-spacing:-0.01em;
+  margin:0 0 4px;
+}
+.doc .role{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--clay);
+  margin-bottom:14px;
+}
+.doc .creds{ font-size:14px; color:var(--ink-soft); line-height:1.5; }
+.doc .creds li{
+  display:flex; gap:10px; padding:6px 0;
+  border-top:1px solid var(--line-soft);
+}
+.doc .creds ul{ list-style:none; padding:0; margin:14px 0 0; }
+.doc .creds .k{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink); width:80px; flex-shrink:0; padding-top:2px; }
+
+.doc-foot{
+  border-top:1px solid var(--line-soft);
+  padding:14px 24px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.doc-foot a{ color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:1px; }
+.doc-foot a:hover{ color:var(--clay); border-color:var(--clay); }
+
+/* ---------- FACILITIES ---------- */
+.facility-section{ background:var(--paper); }
+.fac-grid{
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap:16px;
+}
+@media(max-width:900px){
+  .fac-grid{ grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+}
+.fac{
+  background-image:
+    repeating-linear-gradient( -8deg,
+      transparent 0 14px,
+      rgba(27,58,58,0.05) 14px 15px),
+    linear-gradient(180deg, var(--cream), var(--cream-2));
+  position:relative;
+  display:flex; align-items:flex-end;
+  padding:20px;
+  border:1px solid var(--line-soft);
+}
+.fac:nth-child(1){ grid-row:1 / span 2; }
+@media(max-width:900px){
+  .fac:nth-child(1){ grid-row:auto; grid-column:span 2; min-height:300px; }
+  .fac{ min-height:200px; }
+}
+.fac .cap{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--ink); background:var(--paper); padding:8px 12px; border:1px solid var(--line);
+}
+.fac .num{
+  position:absolute; top:18px; right:20px;
+  font-family:var(--display); font-style:italic; color:var(--clay); font-size:22px;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+.testi-section{ background:var(--cream-2); }
+.testi-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  border-top:1px solid var(--line); border-left:1px solid var(--line);
+  background:var(--cream);
+}
+@media(max-width:900px){ .testi-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:600px){ .testi-grid{ grid-template-columns:1fr; } }
+
+.testi{
+  padding:36px 32px;
+  border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+  display:flex; flex-direction:column; gap:22px;
+}
+.testi .stars{
+  font-family:var(--display); color:var(--clay); font-size:20px; letter-spacing:2px;
+}
+.testi blockquote{
+  margin:0;
+  font-family:var(--display); font-size:22px; line-height:1.35; letter-spacing:-0.005em;
+  text-wrap:pretty;
+}
+.testi .who{
+  margin-top:auto;
+  display:flex; align-items:center; gap:14px;
+  border-top:1px solid var(--line-soft); padding-top:18px;
+}
+.testi .av{
+  width:40px; height:40px; border-radius:50%;
+  background:var(--cream-2); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--display); font-style:italic; color:var(--ink); font-size:18px;
+}
+.testi .meta{ font-size:13px; }
+.testi .meta b{ display:block; font-weight:500; color:var(--ink); }
+.testi .meta span{ color:var(--ink-soft); font-family:var(--mono); font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; }
+
+/* ---------- INSURANCE ---------- */
+.insur{
+  display:flex; align-items:center; flex-wrap:wrap; gap: 16px;
+  margin-top:40px;
+}
+.ilogo{
+  flex:1 1 160px;
+  height:80px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--display); font-size:22px; letter-spacing:-0.01em;
+  color:var(--ink); position:relative;
+}
+.ilogo::after{
+  content:attr(data-tag); position:absolute; top:8px; left:10px;
+  font-family:var(--mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.ilogo em{ font-style:italic; color:var(--clay); }
+
+/* ---------- FAQ ---------- */
+.faq-section{ }
+.faq-grid{ display:grid; grid-template-columns: 1fr 1.6fr; gap: clamp(28px, 5vw, 80px); align-items:start; }
+@media(max-width:900px){ .faq-grid{ grid-template-columns:1fr; } }
+
+.faq-aside{ position:sticky; top:100px; }
+.faq-aside .help{
+  margin-top:28px;
+  background:var(--paper); border:1px solid var(--line-soft);
+  padding:24px;
+}
+.faq-aside .help h5{
+  font-family:var(--display); font-weight:400; font-size:22px; margin:0 0 8px; letter-spacing:-0.01em;
+}
+.faq-aside .help p{ font-size:14px; color:var(--ink-soft); margin:0 0 18px; line-height:1.5; }
+
+.faq-list{ border-top:1px solid var(--line); }
+.faq-item{ border-bottom:1px solid var(--line); }
+.faq-q{
+  width:100%; text-align:left;
+  padding:24px 0;
+  display:flex; justify-content:space-between; align-items:center; gap:24px;
+  font-family:var(--display); font-size:22px; letter-spacing:-0.005em; color:var(--ink);
+  line-height:1.25;
+}
+.faq-q .plus{
+  flex-shrink:0;
+  font-family:var(--mono); font-size:18px; color:var(--clay);
+  width:32px; height:32px; border-radius:50%;
+  border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+  transition:transform .25s ease, background .25s ease, color .25s ease;
+}
+.faq-item.open .faq-q .plus{ background:var(--clay); color:var(--paper); border-color:var(--clay); transform:rotate(45deg); }
+.faq-a{
+  display:none;
+  padding: 0 0 26px;
+  color:var(--ink-soft); font-size:15.5px; line-height:1.6; max-width:680px;
+}
+.faq-item.open .faq-a{ display:block; }
+
+/* ---------- LOCATION ---------- */
+.loc-section{ background:var(--ink); color:var(--paper); }
+.loc-section h2.display{ color:var(--paper); }
+.loc-section h2.display em{ color:var(--gold); }
+.loc-section .eyebrow{ color:rgba(245,241,234,0.6); }
+.loc-section .eyebrow::before{ background:var(--gold); }
+.loc-section .right{ color:rgba(245,241,234,0.65); }
+
+.loc-grid{ display:grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(20px,3vw,40px); }
+@media(max-width:900px){ .loc-grid{ grid-template-columns:1fr; } }
+
+.loc-map{
+  aspect-ratio: 16/12;
+  background:#0F2828;
+  border:1px solid rgba(245,241,234,0.2);
+  position:relative; overflow:hidden;
+  background-image:
+    linear-gradient(rgba(245,241,234,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,241,234,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.loc-map::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(184,113,74,0.18) 0, transparent 30%),
+    radial-gradient(circle at 65% 70%, rgba(184,153,104,0.12) 0, transparent 35%);
+}
+.pin{
+  position:absolute; top:46%; left:42%;
+  width:18px; height:18px; border-radius:50%;
+  background:var(--clay);
+  box-shadow: 0 0 0 8px rgba(184,113,74,0.18), 0 0 0 22px rgba(184,113,74,0.08);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{ box-shadow: 0 0 0 8px rgba(184,113,74,0.18), 0 0 0 22px rgba(184,113,74,0.08); }
+  50%{ box-shadow: 0 0 0 14px rgba(184,113,74,0.25), 0 0 0 32px rgba(184,113,74,0.12); }
+}
+.pin-label{
+  position:absolute; top:38%; left:46%;
+  background:var(--paper); color:var(--ink);
+  padding:8px 12px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase;
+}
+.map-meta{
+  position:absolute; bottom:18px; left:18px; right:18px;
+  display:flex; justify-content:space-between;
+  font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+  color:rgba(245,241,234,0.5);
+}
+
+.loc-info{ display:flex; flex-direction:column; gap:24px; }
+.loc-block{
+  border-top:1px solid rgba(245,241,234,0.2);
+  padding-top:20px;
+}
+.loc-block .lab{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:10px;
+}
+.loc-block .val{
+  font-family:var(--display); font-size:22px; line-height:1.3; letter-spacing:-0.005em;
+}
+.loc-block .val small{ display:block; font-size:14px; font-family:var(--sans); color:rgba(245,241,234,0.65); margin-top:6px; }
+
+.hours{ font-family:var(--mono); font-size:13px; }
+.hours .row{ display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid rgba(245,241,234,0.1); }
+.hours .row:last-child{ border-bottom:none; }
+.hours .day{ color:rgba(245,241,234,0.7); letter-spacing:0.08em; text-transform:uppercase; font-size:11px; }
+.hours .time{ color:var(--paper); }
+.hours .closed{ color:var(--clay); }
+
+/* ---------- FINAL CTA / FORM ---------- */
+.final{ background:var(--cream); }
+.final-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap: clamp(28px,4vw,60px);
+  align-items:start;
+}
+@media(max-width:900px){ .final-grid{ grid-template-columns:1fr; } }
+.final h2{
+  font-family:var(--display); font-weight:400;
+  font-size: clamp(48px, 6.5vw, 92px); line-height:0.98;
+  letter-spacing:-0.025em; margin: 18px 0 0;
+}
+.final h2 em{ font-style:italic; color:var(--clay); }
+.final .lede{ font-size:18px; }
+
+form.book{
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding: clamp(24px, 3vw, 36px);
+  display:flex; flex-direction:column; gap:18px;
+}
+.field{ display:flex; flex-direction:column; gap:7px; }
+.field label{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);
+}
+.field input, .field select, .field textarea{
+  font:inherit; color:var(--ink);
+  background:transparent; border:none; border-bottom:1px solid var(--line);
+  padding:8px 0 10px; outline:none;
+  font-size:16px;
+  border-radius:0;
+}
+.field input:focus, .field select:focus, .field textarea:focus{ border-bottom-color:var(--clay); }
+.field textarea{ resize:vertical; min-height:60px; }
+.field-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+@media(max-width:520px){ .field-row{ grid-template-columns:1fr; } }
+form.book .submit{ margin-top:6px; align-self:flex-start; }
+form.book .legal{
+  font-size:12px; color:var(--ink-soft); line-height:1.5;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:var(--ink); color:var(--paper);
+  padding: 80px var(--pad) 40px;
+}
+.foot-grid{
+  max-width:var(--maxw); margin:0 auto;
+  display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
+  border-bottom:1px solid rgba(245,241,234,0.15);
+  padding-bottom:48px;
+}
+@media(max-width:900px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:520px){ .foot-grid{ grid-template-columns:1fr; } }
+
+.foot-brand .mark{ font-family:var(--display); font-size:42px; letter-spacing:-0.02em; }
+.foot-brand .mark em{ font-style:italic; color:var(--gold); }
+.foot-brand p{ margin:14px 0 0; color:rgba(245,241,234,0.65); max-width:340px; font-size:14.5px; }
+
+.foot-col h6{
+  font-family:var(--mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+  color:rgba(245,241,234,0.5); margin:0 0 18px;
+}
+.foot-col a{ display:block; padding:6px 0; color:rgba(245,241,234,0.85); font-size:14.5px; }
+.foot-col a:hover{ color:var(--gold); }
+
+.foot-bot{
+  max-width:var(--maxw); margin:0 auto;
+  padding-top:24px;
+  display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  color:rgba(245,241,234,0.5);
+}
+
+/* ---------- WA FAB ---------- */
+.wa-fab{
+  position:fixed; bottom:24px; right:24px; z-index:50;
+  background:var(--clay); color:var(--paper);
+  padding:14px 20px; border-radius:999px;
+  font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+  box-shadow: 0 10px 30px rgba(27,58,58,0.18);
+  display:flex; align-items:center; gap:10px;
+  transition:transform .2s ease, background .2s ease;
+}
+.wa-fab:hover{ background:var(--clay-deep); transform:translateY(-2px); }
+.wa-fab .ic{
+  width:8px; height:8px; border-radius:50%; background:var(--paper);
+  box-shadow: 0 0 0 0 rgba(255,255,255,0.6);
+  animation: ping 2s ease-in-out infinite;
+}
+@keyframes ping{ 0%,100%{ box-shadow: 0 0 0 0 rgba(255,255,255,0.6);} 50%{ box-shadow: 0 0 0 8px rgba(255,255,255,0); } }
+@media(max-width:520px){
+  .wa-fab span{ display:none; }
+  .wa-fab{ padding:14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCE -->
+<div class="announce">
+  <span><span class="dot"></span>&nbsp; Konsultasi pertama gratis — sampai 31 Mei</span>
+  <span>·</span>
+  <span>Menerima BPJS &amp; 12 mitra asuransi</span>
+</div>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="brand">
+    <span class="mark">Dent<em>i</em>que</span>
+    <span class="tag">est. 2014 · Jakarta</span>
+  </div>
+  <div class="nav-links">
+    <a href="#layanan">Layanan</a>
+    <a href="#dokter">Dokter</a>
+    <a href="#fasilitas">Fasilitas</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#faq">FAQ</a>
+    <a href="#lokasi">Lokasi</a>
+  </div>
+  <div class="nav-cta">
+    <span class="nav-phone">+62 21 7234 9090</span>
+    <a href="#booking" class="btn btn-primary btn-sm">Buat Janji <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Klinik Gigi · Senopati, Jakarta Selatan</div>
+        <h1>Senyum yang<br>Anda <em>percaya</em>,<br>seumur hidup.</h1>
+        <p class="sub">Perawatan gigi estetik dan restoratif untuk dewasa dan anak — dijalankan oleh tim dokter bersertifikasi dengan teknologi diagnostik 3D, dalam ruang yang dirancang setenang sebuah ruang baca.</p>
+        <div class="ctas">
+          <a href="#booking" class="btn btn-primary">Buat Janji Sekarang <span class="arr">→</span></a>
+          <a href="https://wa.me/6281234567890" class="btn btn-ghost">Konsultasi via WhatsApp</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="hero-figure">
+          <div class="badge">
+            Rating Google
+            <strong>4.9 / 5.0</strong>
+          </div>
+          <div class="ph-label">[ FOTO RUANG KLINIK — DROP IMAGE HERE ]</div>
+          <div class="quote">
+            “Tenang, bersih, tidak terasa seperti klinik gigi pada umumnya.”
+            <small>— A. Putri · Pasien sejak 2019</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="stat">
+        <div class="num">12<em>+</em></div>
+        <div class="lab">Tahun praktik</div>
+      </div>
+      <div class="stat">
+        <div class="num">8.400<em>+</em></div>
+        <div class="lab">Pasien terlayani</div>
+      </div>
+      <div class="stat">
+        <div class="num">9</div>
+        <div class="lab">Dokter spesialis</div>
+      </div>
+      <div class="stat">
+        <div class="num">4.9<em>/5</em></div>
+        <div class="lab">Rating Google · 612 ulasan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-row">
+    <div class="trust-item"><span class="ic">✓</span> Terakreditasi <b>KARS Paripurna</b></div>
+    <div class="trust-item"><span class="ic">✓</span> Semua dokter ber-<b>STR &amp; SIP aktif</b></div>
+    <div class="trust-item"><span class="ic">✓</span> Sterilisasi <b>Standar Eropa EN 13060</b></div>
+    <div class="trust-item"><span class="ic">✓</span> Mitra <b>BPJS &amp; 12 asuransi</b></div>
+  </div>
+</div>
+
+<!-- LAYANAN -->
+<section id="layanan">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Layanan Utama</div>
+        <h2 class="display">Perawatan menyeluruh,<br>dari rutin hingga <em>estetik lanjut</em>.</h2>
+      </div>
+      <div class="right">
+        Setiap perawatan dimulai dengan pemeriksaan menyeluruh dan rencana yang dijelaskan dengan transparan — termasuk estimasi biaya — sebelum kami mulai.
+      </div>
+    </div>
+
+    <div class="services">
+
+      <article class="svc">
+        <div class="hd"><div class="ix">01</div></div>
+        <h3>Pemeriksaan &amp; <em>Pembersihan</em></h3>
+        <p>Skeling, polishing, dan pemeriksaan rutin dengan kamera intra-oral. Dianjurkan setiap 6 bulan.</p>
+        <div class="pricing">
+          <div>
+            <div class="price-lab">Mulai dari</div>
+            <div class="price">Rp 380.000</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="hd"><div class="ix">02</div><div class="pop">Paling Populer</div></div>
+        <h3>Veneer &amp; <em>Bleaching</em></h3>
+        <p>Pemutihan gigi profesional dan veneer porselen estetik dengan pratinjau digital sebelum tindakan.</p>
+        <div class="pricing">
+          <div>
+            <div class="price-lab">Mulai dari</div>
+            <div class="price">Rp 2.800.000</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="hd"><div class="ix">03</div></div>
+        <h3>Implan <em>Gigi</em></h3>
+        <p>Implan dengan sistem Straumann &amp; Osstem, dipandu navigasi 3D untuk presisi dan masa pemulihan singkat.</p>
+        <div class="pricing">
+          <div>
+            <div class="price-lab">Mulai dari</div>
+            <div class="price">Rp 14.500.000</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="hd"><div class="ix">04</div></div>
+        <h3>Behel &amp; <em>Aligner Bening</em></h3>
+        <p>Behel konvensional, self-ligating, dan clear aligner. Konsultasi rencana 24 bulan disertakan.</p>
+        <div class="pricing">
+          <div>
+            <div class="price-lab">Mulai dari</div>
+            <div class="price">Rp 6.500.000</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="hd"><div class="ix">05</div></div>
+        <h3>Perawatan <em>Saluran Akar</em></h3>
+        <p>Endodontik mikroskopik dengan rotari NiTi — mengurangi kunjungan dan kenyamanan lebih baik.</p>
+        <div class="pricing">
+          <div>
+            <div class="price-lab">Mulai dari</div>
+            <div class="price">Rp 2.100.000</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="hd"><div class="ix">06</div><div class="pop">Anak</div></div>
+        <h3>Dentique <em>Kids</em></h3>
+        <p>Ruang khusus anak dengan dokter pedodontik, pendekatan tell-show-do, dan kursi karakter.</p>
+        <div class="pricing">
+          <div>
+            <div class="price-lab">Mulai dari</div>
+            <div class="price">Rp 250.000</div>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Cara Booking · 4 Langkah</div>
+        <h2 class="display">Tanpa antrian.<br>Tanpa <em>kejutan biaya</em>.</h2>
+      </div>
+      <div class="right">
+        Kami percaya pengalaman ke dokter gigi semestinya tenang sejak menit pertama Anda menghubungi kami. Begini alurnya.
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="step">
+        <div class="n">i.</div>
+        <h4>Hubungi Kami</h4>
+        <p>Booking via WhatsApp, telepon, atau form di halaman ini. Tim resepsionis akan merespons dalam 1 jam pada jam kerja.</p>
+        <div class="dur">~ 5 menit</div>
+      </div>
+      <div class="step">
+        <div class="n">ii.</div>
+        <h4>Konsultasi Awal</h4>
+        <p>Pemeriksaan menyeluruh, rontgen panoramik, dan diskusi opsi perawatan dengan dokter — gratis untuk kunjungan pertama.</p>
+        <div class="dur">~ 30 menit</div>
+      </div>
+      <div class="step">
+        <div class="n">iii.</div>
+        <h4>Rencana &amp; Estimasi</h4>
+        <p>Anda menerima rencana tertulis: tahapan, durasi, biaya total, dan opsi cicilan tanpa bunga hingga 12 bulan.</p>
+        <div class="dur">Sebelum tindakan</div>
+      </div>
+      <div class="step">
+        <div class="n">iv.</div>
+        <h4>Perawatan &amp; Tindak Lanjut</h4>
+        <p>Mulai perawatan sesuai jadwal yang Anda pilih. Setiap pasien dapat akses portal untuk riwayat &amp; pengingat.</p>
+        <div class="dur">Berkelanjutan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOKTER -->
+<section id="dokter">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Tim Dokter</div>
+        <h2 class="display">Sembilan dokter, satu <em>standar perawatan</em>.</h2>
+      </div>
+      <div class="right">
+        Setiap dokter di Dentique memegang STR &amp; SIP aktif, mengikuti pelatihan berkelanjutan, dan menjalani peer review internal setiap kuartal.
+      </div>
+    </div>
+
+    <div class="doctors">
+
+      <div class="doc">
+        <div class="ph">
+          <div class="ph-tag">[ Foto profesional ]</div>
+          <div class="ph-id">DOC-01</div>
+        </div>
+        <div class="doc-body">
+          <h4>drg. Anindita Larasati, Sp.KG</h4>
+          <div class="role">Konservasi Gigi · Founding Partner</div>
+          <div class="creds">
+            <ul>
+              <li><span class="k">Pendidikan</span><span>FKG Universitas Indonesia · 2008</span></li>
+              <li><span class="k">Spesialis</span><span>Konservasi Gigi · UI · 2014</span></li>
+              <li><span class="k">No. STR</span><span>3311100823145621</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="doc-foot">
+          <span>Sen — Jum · Pagi</span>
+          <a href="#booking">Buat janji →</a>
+        </div>
+      </div>
+
+      <div class="doc">
+        <div class="ph">
+          <div class="ph-tag">[ Foto profesional ]</div>
+          <div class="ph-id">DOC-02</div>
+        </div>
+        <div class="doc-body">
+          <h4>drg. Rendra Kusuma, Sp.Ort</h4>
+          <div class="role">Ortodonti · Behel &amp; Aligner</div>
+          <div class="creds">
+            <ul>
+              <li><span class="k">Pendidikan</span><span>FKG Universitas Padjadjaran · 2010</span></li>
+              <li><span class="k">Spesialis</span><span>Ortodonti · UNPAD · 2016</span></li>
+              <li><span class="k">No. STR</span><span>3311100923145897</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="doc-foot">
+          <span>Sel — Sab · Sore</span>
+          <a href="#booking">Buat janji →</a>
+        </div>
+      </div>
+
+      <div class="doc">
+        <div class="ph">
+          <div class="ph-tag">[ Foto profesional ]</div>
+          <div class="ph-id">DOC-03</div>
+        </div>
+        <div class="doc-body">
+          <h4>drg. Sharifah Maulida, Sp.BM</h4>
+          <div class="role">Bedah Mulut · Implan</div>
+          <div class="creds">
+            <ul>
+              <li><span class="k">Pendidikan</span><span>FKG Universitas Airlangga · 2009</span></li>
+              <li><span class="k">Spesialis</span><span>Bedah Mulut · UI · 2015</span></li>
+              <li><span class="k">No. STR</span><span>3311100723142031</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="doc-foot">
+          <span>Rabu &amp; Jum'at</span>
+          <a href="#booking">Buat janji →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:24px; display:flex; justify-content:center;">
+      <a href="#" class="btn btn-ghost">Lihat seluruh tim (9 dokter) <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FASILITAS -->
+<section id="fasilitas" class="facility-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Fasilitas</div>
+        <h2 class="display">Klinik yang <em>tidak terasa</em><br>seperti klinik.</h2>
+      </div>
+      <div class="right">
+        Lima ruang perawatan, ruang sterilisasi terisolasi dengan tekanan negatif, dan ruang tunggu yang dirancang untuk mengurangi kecemasan dental — bukan menambahnya.
+      </div>
+    </div>
+
+    <div class="fac-grid">
+      <div class="fac">
+        <div class="num">01</div>
+        <div class="cap">[ Ruang tunggu utama ]</div>
+      </div>
+      <div class="fac">
+        <div class="num">02</div>
+        <div class="cap">[ Ruang perawatan A ]</div>
+      </div>
+      <div class="fac">
+        <div class="num">03</div>
+        <div class="cap">[ Sterilisasi ]</div>
+      </div>
+      <div class="fac">
+        <div class="num">04</div>
+        <div class="cap">[ Ruang anak ]</div>
+      </div>
+      <div class="fac">
+        <div class="num">05</div>
+        <div class="cap">[ Lab digital 3D ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="testimoni" class="testi-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Suara Pasien</div>
+        <h2 class="display">612 ulasan,<br>4.9 dari 5 di <em>Google</em>.</h2>
+      </div>
+      <div class="right">
+        Kutipan diambil dari ulasan publik di Google Maps. Nama dan foto pasien dimuat dengan persetujuan tertulis sesuai etika medis.
+      </div>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>“Saya phobia dental sejak kecil. Di sini dokter benar-benar mendengarkan dan menjelaskan setiap langkah. Untuk pertama kalinya saya tidak panik di kursi gigi.”</blockquote>
+        <div class="who">
+          <div class="av">N</div>
+          <div class="meta"><b>Ny. R., 38</b><span>Pasien Veneer · 2024</span></div>
+        </div>
+      </div>
+
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>“Estimasi biaya diberikan tertulis sebelum tindakan. Tidak ada biaya tambahan kejutan. Sederhana, tapi jarang ada.”</blockquote>
+        <div class="who">
+          <div class="av">A</div>
+          <div class="meta"><b>Tn. A., 45</b><span>Pasien Implan · 2023</span></div>
+        </div>
+      </div>
+
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>“Anak saya yang biasanya menangis tiap ke dokter gigi sekarang minta sendiri untuk pemeriksaan rutin. Ruang anaknya membantu sekali.”</blockquote>
+        <div class="who">
+          <div class="av">D</div>
+          <div class="meta"><b>Ny. D., 34</b><span>Orang tua pasien · 2025</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INSURANCE -->
+    <div style="margin-top:80px;">
+      <div class="eyebrow">Mitra Asuransi &amp; BPJS</div>
+      <h2 class="display" style="margin-top:14px; font-size: clamp(28px,3.4vw,40px);">Diterima oleh asuransi yang kemungkinan besar Anda gunakan.</h2>
+
+      <div class="insur">
+        <div class="ilogo" data-tag="01"><span>BPJS <em>Kesehatan</em></span></div>
+        <div class="ilogo" data-tag="02"><span>Allianz</span></div>
+        <div class="ilogo" data-tag="03"><span>AXA Mandiri</span></div>
+        <div class="ilogo" data-tag="04"><span>Prudential</span></div>
+        <div class="ilogo" data-tag="05"><span>Cigna</span></div>
+        <div class="ilogo" data-tag="06"><span>Manulife</span></div>
+        <div class="ilogo" data-tag="07"><span>FWD <em>Insurance</em></span></div>
+        <div class="ilogo" data-tag="08"><span>Mandiri Inhealth</span></div>
+      </div>
+      <p style="font-family:var(--mono); font-size:12px; letter-spacing:0.1em; color:var(--ink-soft); margin-top:18px;">+ 4 mitra lain — tanyakan kepada resepsionis untuk daftar lengkap.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="wrap">
+    <div class="faq-grid">
+      <aside class="faq-aside">
+        <div class="eyebrow">Pertanyaan Umum</div>
+        <h2 class="display" style="font-size:clamp(34px,4vw,52px);">Yang sering<br>kami <em>jawab</em>.</h2>
+        <div class="help">
+          <h5>Tidak menemukan jawaban?</h5>
+          <p>Tim kami merespons WhatsApp dalam 1 jam pada jam kerja, dan akan menghubungkan Anda ke dokter bila perlu.</p>
+          <a href="https://wa.me/6281234567890" class="btn btn-clay btn-sm">Tanya via WhatsApp <span class="arr">→</span></a>
+        </div>
+      </aside>
+
+      <div class="faq-list">
+
+        <div class="faq-item open">
+          <button class="faq-q"><span>Apakah konsultasi pertama benar-benar gratis?</span><span class="plus">+</span></button>
+          <div class="faq-a">Ya. Kunjungan pertama mencakup pemeriksaan menyeluruh, foto rontgen panoramik bila diperlukan, dan diskusi rencana perawatan dengan dokter — tanpa biaya. Tidak ada keharusan melanjutkan tindakan setelah konsultasi.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q"><span>Apakah Dentique menerima BPJS Kesehatan?</span><span class="plus">+</span></button>
+          <div class="faq-a">Ya. Kami adalah Faskes mitra BPJS Kesehatan untuk layanan dasar (pemeriksaan, scaling, pencabutan, tambalan sederhana). Untuk perawatan estetik, ortodonti, dan implan, biaya bersifat pribadi atau ditanggung asuransi swasta mitra.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q"><span>Berapa lama waktu booking sampai bisa konsultasi?</span><span class="plus">+</span></button>
+          <div class="faq-a">Pada hari kerja, sebagian besar pasien mendapat slot dalam 24–48 jam. Untuk perawatan spesialis tertentu (Sp.Ort, Sp.BM), slot dapat berjarak hingga 5–7 hari karena keterbatasan jadwal dokter.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q"><span>Apakah ada opsi cicilan untuk perawatan besar?</span><span class="plus">+</span></button>
+          <div class="faq-a">Tersedia cicilan 0% hingga 12 bulan untuk pemegang kartu kredit BCA, Mandiri, dan BNI. Untuk perawatan implan dan ortodonti, kami juga menawarkan rencana pembayaran internal bertahap mengikuti tahapan tindakan.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q"><span>Apakah anak di bawah 5 tahun bisa diperiksa di sini?</span><span class="plus">+</span></button>
+          <div class="faq-a">Ya. Kami memiliki ruang khusus pedodontik dan dokter Sp.KGA. Untuk pasien anak pertama kali, kami menyarankan kunjungan kenalan singkat (15 menit) tanpa tindakan terlebih dahulu, sehingga anak nyaman pada kunjungan berikutnya.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q"><span>Apakah kursi dan alat steril setiap pasien?</span><span class="plus">+</span></button>
+          <div class="faq-a">Setiap instrumen disterilisasi dengan autoklaf kelas B sesuai standar EN 13060. Set instrumen baru dibuka di hadapan pasien. Permukaan kursi didisinfeksi setelah setiap pasien, dengan log pembersihan tertulis per ruang.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q"><span>Bagaimana jika saya perlu membatalkan janji?</span><span class="plus">+</span></button>
+          <div class="faq-a">Pembatalan tanpa biaya hingga 6 jam sebelum jadwal. Pembatalan kurang dari 6 jam dikenakan biaya administrasi Rp 100.000 yang akan dikreditkan ke kunjungan berikutnya — bukan hangus.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOKASI -->
+<section id="lokasi" class="loc-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Lokasi &amp; Jam</div>
+        <h2 class="display">Senopati, Jakarta Selatan.<br>Lima menit dari <em>SCBD</em>.</h2>
+      </div>
+      <div class="right">
+        Parkir basement gratis untuk pasien (sampai 3 jam), valet pada akhir pekan. Akses GoCar/Grab tersedia langsung di lobby.
+      </div>
+    </div>
+
+    <div class="loc-grid">
+      <div class="loc-map">
+        <div class="pin"></div>
+        <div class="pin-label">Dentique Clinic — Senopati</div>
+        <div class="map-meta">
+          <span>-6.2300° S · 106.8068° E</span>
+          <span>↗ Buka di Google Maps</span>
+        </div>
+      </div>
+
+      <div class="loc-info">
+        <div class="loc-block">
+          <div class="lab">Alamat</div>
+          <div class="val">
+            Jl. Suryo No. 24
+            <small>Senopati, Kebayoran Baru<br>Jakarta Selatan 12180</small>
+          </div>
+        </div>
+        <div class="loc-block">
+          <div class="lab">Kontak</div>
+          <div class="val">
+            +62 21 7234 9090
+            <small>WhatsApp · halo@dentique.co.id</small>
+          </div>
+        </div>
+        <div class="loc-block">
+          <div class="lab">Jam Praktik</div>
+          <div class="hours">
+            <div class="row"><span class="day">Senin — Jumat</span><span class="time">09.00 — 21.00</span></div>
+            <div class="row"><span class="day">Sabtu</span><span class="time">09.00 — 18.00</span></div>
+            <div class="row"><span class="day">Minggu</span><span class="time closed">Tutup · darurat tersedia</span></div>
+            <div class="row"><span class="day">Hari Libur Nasional</span><span class="time closed">Tutup</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA + FORM -->
+<section id="booking" class="final">
+  <div class="wrap">
+    <div class="final-grid">
+      <div>
+        <div class="eyebrow">Buat Janji</div>
+        <h2>Mari mulai dengan<br>satu <em>kunjungan tenang</em>.</h2>
+        <p class="lede">Isi formulir di samping atau hubungi kami via WhatsApp. Tim resepsionis akan menghubungi Anda untuk memastikan jadwal dan dokter yang tepat — biasanya dalam 1 jam pada jam kerja.</p>
+
+        <div style="margin-top:36px; display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; align-items:center; gap:14px; border-top:1px solid var(--line); padding-top:18px;">
+            <span style="font-family:var(--display); font-style:italic; color:var(--clay); font-size:24px;">i.</span>
+            <div>
+              <div style="font-size:15px;">Konsultasi pertama gratis</div>
+              <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); margin-top:3px;">Termasuk pemeriksaan menyeluruh</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; border-top:1px solid var(--line); padding-top:18px;">
+            <span style="font-family:var(--display); font-style:italic; color:var(--clay); font-size:24px;">ii.</span>
+            <div>
+              <div style="font-size:15px;">Estimasi biaya tertulis</div>
+              <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); margin-top:3px;">Sebelum tindakan dilakukan</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; border-top:1px solid var(--line); padding-top:18px;">
+            <span style="font-family:var(--display); font-style:italic; color:var(--clay); font-size:24px;">iii.</span>
+            <div>
+              <div style="font-size:15px;">Cicilan 0% hingga 12 bulan</div>
+              <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); margin-top:3px;">BCA · Mandiri · BNI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="book" onsubmit="handleSubmit(event)">
+        <div class="field">
+          <label for="nama">Nama Lengkap</label>
+          <input id="nama" name="nama" type="text" placeholder="cth. Anindita Putri" required />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="wa">Nomor WhatsApp</label>
+            <input id="wa" name="wa" type="tel" placeholder="+62 812 ..." required />
+          </div>
+          <div class="field">
+            <label for="email">Email <span style="text-transform:none; opacity:0.5;">(opsional)</span></label>
+            <input id="email" name="email" type="email" placeholder="anda@email.com" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="layanan">Layanan yang Diminati</label>
+          <select id="layanan" name="layanan" required>
+            <option value="">Pilih layanan…</option>
+            <option>Pemeriksaan &amp; Pembersihan</option>
+            <option>Veneer / Bleaching</option>
+            <option>Implan Gigi</option>
+            <option>Behel / Aligner</option>
+            <option>Perawatan Saluran Akar</option>
+            <option>Dentique Kids</option>
+            <option>Belum yakin — diskusikan dulu</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="jadwal">Preferensi Jadwal</label>
+          <select id="jadwal" name="jadwal">
+            <option value="">Pilih waktu…</option>
+            <option>Pagi (09.00 — 12.00)</option>
+            <option>Siang (12.00 — 16.00)</option>
+            <option>Sore / Malam (16.00 — 21.00)</option>
+            <option>Akhir pekan</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="catatan">Catatan untuk Dokter <span style="text-transform:none; opacity:0.5;">(opsional)</span></label>
+          <textarea id="catatan" name="catatan" placeholder="cth. Saya phobia dental, mohon dijelaskan setiap tahap."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit">
+          Kirim Permintaan Janji <span class="arr">→</span>
+        </button>
+
+        <p class="legal">Dengan mengirim form ini, Anda setuju kami menghubungi Anda via WhatsApp atau telepon. Data Anda hanya digunakan untuk keperluan janji medis.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="mark">Dent<em>i</em>que</div>
+      <p>Klinik gigi modern yang menempatkan ketenangan pasien setara dengan presisi klinis. Berdiri di Senopati, Jakarta sejak 2014.</p>
+    </div>
+    <div class="foot-col">
+      <h6>Layanan</h6>
+      <a href="#layanan">Pemeriksaan Rutin</a>
+      <a href="#layanan">Veneer &amp; Bleaching</a>
+      <a href="#layanan">Implan</a>
+      <a href="#layanan">Ortodonti</a>
+      <a href="#layanan">Dentique Kids</a>
+    </div>
+    <div class="foot-col">
+      <h6>Klinik</h6>
+      <a href="#dokter">Tim Dokter</a>
+      <a href="#fasilitas">Fasilitas</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#faq">FAQ</a>
+      <a href="#lokasi">Lokasi &amp; Jam</a>
+    </div>
+    <div class="foot-col">
+      <h6>Kontak</h6>
+      <a href="tel:+622172349090">+62 21 7234 9090</a>
+      <a href="https://wa.me/6281234567890">WhatsApp</a>
+      <a href="mailto:halo@dentique.co.id">halo@dentique.co.id</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2014—2026 Dentique Clinic. Izin Klinik No. 503/4521/DPMPTSP.</span>
+    <span>Privasi · Syarat Layanan</span>
+  </div>
+</footer>
+
+<!-- WA fab -->
+<a class="wa-fab" href="https://wa.me/6281234567890">
+  <span class="ic"></span>
+  <span>Chat WhatsApp</span>
+</a>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if(!open) item.classList.add('open');
+  });
+});
+
+// Smooth-scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if(id.length > 1){
+      const tgt = document.querySelector(id);
+      if(tgt){ e.preventDefault(); window.scrollTo({ top: tgt.offsetTop - 80, behavior:'smooth' }); }
+    }
+  });
+});
+
+function handleSubmit(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.innerHTML = 'Terkirim — kami akan menghubungi Anda';
+  btn.style.background = 'var(--clay)';
+  setTimeout(() => { e.target.reset(); btn.innerHTML = 'Kirim Permintaan Janji <span class="arr">→</span>'; btn.style.background = ''; }, 3500);
+}
+</script>
+
+</body>
+</html>
