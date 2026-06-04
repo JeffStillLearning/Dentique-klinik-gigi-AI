@@ -11,7 +11,7 @@ const instrumentSerif = Instrument_Serif({
   style: ['normal', 'italic'],
   variable: '--font-instrument-serif',
   display: 'swap',
-  preload: true,
+  preload: false,
 })
 
 const geist = Geist({
@@ -19,7 +19,7 @@ const geist = Geist({
   weight: ['300', '400', '500', '600'],
   variable: '--font-geist',
   display: 'swap',
-  preload: true,
+  preload: false,
 })
 
 const jetbrainsMono = JetBrains_Mono({
